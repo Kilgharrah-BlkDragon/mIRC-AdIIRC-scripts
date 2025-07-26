@@ -16,10 +16,10 @@ on *:text:*:#:{
 
   if (Madeleine Czura! isin $1-) && ( $nick isop $chan ) {
     return
-    } else {
-    if (Madeleine Czura! isin $1-) {
-      msg # Spam Detected! Barn door protocol engaged!
-      msg x ban # $nick 7d 100 Abuse
-    }
   }
-}
+  if (Madeleine Czura! isin $1-) && ( $network = UnderNet ) {
+    msg x ban # $nick 7d 100 Abuse
+  }
+  if (Madeleine Czura! isin $1-) && ( $network != UnderNet ) {
+    ban -k # $nick 3 Abuse
+  }
