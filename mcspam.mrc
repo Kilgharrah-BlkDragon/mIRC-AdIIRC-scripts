@@ -1,25 +1,24 @@
-#BlkDragon's Madeleine Czura Anti-Spam Script for mIRC and AdIIRC ver1.0
-#Credit: LilyBaby
-#Created: 7/26/2025
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# BlkDragon's Anti-Spam ( Madeleine Czura) Script ver_1.0
+# Credit: LilyBaby
+# Created: 7.26.2025
 
-# Section I: Exempt Channel(s)
-on *:text:*:#:{ 
-  if ( $chan = #your.chan.goes.here ) { 
-    return 
+# Exempted Chan
+on 1:text:*:#:{ 
+  if ($chan = #your.chan.goes.here) { 
+    return
   }
-
-  # Note: To add more channels: Copy paste the above and change the channel name!
-
-
-  # Section II: Non-Exempt Channels  
-
+# Exempt Chan Ops
   if (Madeleine Czura! isin $1-) && ( $nick isop $chan ) {
     return
   }
+
+# Non-Exempt Chans
+
   if (Madeleine Czura! isin $1-) && ( $network = UnderNet ) {
-    msg x ban # $nick 7d 100 Abuse
+    msg x ban $chan $nick 7d 100 Abuse
   }
+
   if (Madeleine Czura! isin $1-) && ( $network != UnderNet ) {
-    ban -k # $nick 3 Abuse
-  }
+    ban -k $chan $nick 3 Abuse
+  } 
+}
