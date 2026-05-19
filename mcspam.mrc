@@ -7,13 +7,12 @@
     return
   }
 
-# Non-Exempt Chans
-
+  # -- All other users -- 
+  
   if (Madeleine Czura! isin $1-) && ( $network = UnderNet ) {
-    msg x ban $chan $nick 7d 100 Abuse
+    msg x ban $chan $nick 7d 100 Stop Spamming
   }
 
   if (Madeleine Czura! isin $1-) && ( $network != UnderNet ) {
-    ban -k $chan $nick 3 Abuse
   } 
 }
