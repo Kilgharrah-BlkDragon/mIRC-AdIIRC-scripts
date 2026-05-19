@@ -2,11 +2,6 @@
 # Credit: LilyBaby
 # Created: 7.26.2025
 
-# Exempted Chan
-on 1:text:*:#:{ 
-  if ($chan = #your.chan.goes.here) { 
-    return
-  }
 # Exempt Chan Ops
   if (Madeleine Czura! isin $1-) && ( $nick isop $chan ) {
     return
